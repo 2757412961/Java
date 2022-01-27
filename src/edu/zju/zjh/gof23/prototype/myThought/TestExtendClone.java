@@ -1,8 +1,9 @@
 package edu.zju.zjh.gof23.prototype.myThought;
 
-import com.zjh.prototype.myThought.computer.Computer;
-import com.zjh.prototype.myThought.computer.Mouse;
-import com.zjh.prototype.myThought.computer.Screen;
+
+import edu.zju.zjh.gof23.prototype.myThought.computer.Computer;
+import edu.zju.zjh.gof23.prototype.myThought.computer.Mouse;
+import edu.zju.zjh.gof23.prototype.myThought.computer.Screen;
 
 /**
  * @author: zjh

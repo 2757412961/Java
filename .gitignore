@@ -6,6 +6,10 @@
 .git/*
 
 # Java #
-*/test/*
-*/out/*
+**/out/*
+**/test/*
+
+# Spring #
+**/target/*
+
 
