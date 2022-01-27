@@ -1,0 +1,11 @@
+# IDEA #
+.idea/*
+*.iml
+
+# GIT #
+.git/*
+
+# Java #
+*/test/*
+*/out/*
+
