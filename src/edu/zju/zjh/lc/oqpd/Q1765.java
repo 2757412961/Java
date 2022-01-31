@@ -1,4 +1,4 @@
-package edu.zju.zjh.lc.doublepointer;
+package edu.zju.zjh.lc.oqpd;
 
 import java.util.LinkedList;
 import java.util.Queue;
