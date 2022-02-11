@@ -30,4 +30,23 @@
 
     </dependencies>
 
+    <build>
+        <!--默认源代码目录-->
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <!--默认测试源代码目录-->
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <!--默认资源目录-->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <!--默认测试资源目录-->
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+    </build>
+
 </project>
