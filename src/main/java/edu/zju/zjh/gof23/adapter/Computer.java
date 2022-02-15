@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.gof23.adapter;
+package edu.zju.zjh.gof23.adapter;
 
 /**
  * @author: zjh

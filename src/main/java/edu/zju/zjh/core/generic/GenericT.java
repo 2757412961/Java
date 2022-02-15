@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.core.generic;
+package edu.zju.zjh.core.generic;
 
 import java.util.List;
 

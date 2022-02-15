@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lc.fs.dfs;
+package edu.zju.zjh.lc.fs.dfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

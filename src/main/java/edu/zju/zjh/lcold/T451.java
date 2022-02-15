@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold;
+package edu.zju.zjh.lcold;
 
 public class T451 {
     public String frequencySort(String s) {

@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.core.reflection;
+package edu.zju.zjh.core.reflection;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

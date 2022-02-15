@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold;
+package edu.zju.zjh.lcold;
 
 public class T042 {
     public int trap(int[] height) {

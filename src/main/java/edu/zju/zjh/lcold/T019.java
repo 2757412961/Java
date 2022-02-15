@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold;
+package edu.zju.zjh.lcold;
 
 public class T019 {
     public ListNode removeNthFromEnd(ListNode head, int n) {

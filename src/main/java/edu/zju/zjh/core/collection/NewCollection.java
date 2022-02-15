@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.core.collection;
+package edu.zju.zjh.core.collection;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

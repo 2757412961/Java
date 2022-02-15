@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold;
+package edu.zju.zjh.lcold;
 
 public class T002 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {

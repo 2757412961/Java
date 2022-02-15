@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold;
+package edu.zju.zjh.lcold;
 
 public class T074 {
     public boolean searchMatrix(int[][] matrix, int target) {

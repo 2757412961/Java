@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.gof23.proxy.dynamic;
+package edu.zju.zjh.gof23.proxy.dynamic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

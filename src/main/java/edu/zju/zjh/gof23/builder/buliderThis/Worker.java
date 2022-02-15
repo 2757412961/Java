@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.gof23.builder.buliderThis;
+package edu.zju.zjh.gof23.builder.buliderThis;
 
 public class Worker extends Builder {
     private Product product = new Product();

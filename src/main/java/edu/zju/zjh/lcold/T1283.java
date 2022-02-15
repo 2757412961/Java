@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold;
+package edu.zju.zjh.lcold;
 
 public class T1283 {
     public int smallestDivisor(int[] nums, int threshold) {

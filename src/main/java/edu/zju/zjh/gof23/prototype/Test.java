@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.gof23.prototype;
+package edu.zju.zjh.gof23.prototype;
 
 import java.util.Date;
 

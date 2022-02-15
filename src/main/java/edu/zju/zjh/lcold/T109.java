@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold; /**
+package edu.zju.zjh.lcold; /**
  * @author : Z
  * @description : TODO
  * @date : 2020/8/18 上午 09:26

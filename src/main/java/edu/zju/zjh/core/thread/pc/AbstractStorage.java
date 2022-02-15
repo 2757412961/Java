@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.core.thread.pc;
+package edu.zju.zjh.core.thread.pc;
 
 /**
  * @author: zjh

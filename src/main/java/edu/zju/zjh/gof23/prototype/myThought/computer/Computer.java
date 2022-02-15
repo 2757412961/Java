@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.gof23.prototype.myThought.computer;
+package edu.zju.zjh.gof23.prototype.myThought.computer;
 
 /**
  * @author: zjh

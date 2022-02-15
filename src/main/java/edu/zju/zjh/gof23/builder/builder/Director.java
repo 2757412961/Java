@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.gof23.builder.builder;
+package edu.zju.zjh.gof23.builder.builder;
 
 public class Director {
 

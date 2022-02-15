@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.core.annotation;
+package edu.zju.zjh.core.annotation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

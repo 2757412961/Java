@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.gof23.bridge;
+package edu.zju.zjh.gof23.bridge;
 
 /**
  * @author: zjh

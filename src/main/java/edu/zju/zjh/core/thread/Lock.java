@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.core.thread;
+package edu.zju.zjh.core.thread;
 
 import java.util.concurrent.locks.ReentrantLock;
 

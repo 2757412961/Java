@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.core.annotation;
+package edu.zju.zjh.core.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

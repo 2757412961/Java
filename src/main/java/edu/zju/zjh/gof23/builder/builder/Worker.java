@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.gof23.builder.builder;
+package edu.zju.zjh.gof23.builder.builder;
 
 public class Worker extends Builder {
     private Product product = new Product();

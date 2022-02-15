@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold;
+package edu.zju.zjh.lcold;
 
 public class T617 {
     public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {

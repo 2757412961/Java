@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lc.oqpd;
+package edu.zju.zjh.lc.oqpd;
 
 import java.util.Arrays;
 

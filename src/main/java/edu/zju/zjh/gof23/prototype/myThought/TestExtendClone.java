@@ -1,9 +1,9 @@
-package main.java.edu.zju.zjh.gof23.prototype.myThought;
+package edu.zju.zjh.gof23.prototype.myThought;
 
 
-import main.java.edu.zju.zjh.gof23.prototype.myThought.computer.Computer;
-import main.java.edu.zju.zjh.gof23.prototype.myThought.computer.Mouse;
-import main.java.edu.zju.zjh.gof23.prototype.myThought.computer.Screen;
+import edu.zju.zjh.gof23.prototype.myThought.computer.Computer;
+import edu.zju.zjh.gof23.prototype.myThought.computer.Mouse;
+import edu.zju.zjh.gof23.prototype.myThought.computer.Screen;
 
 /**
  * @author: zjh

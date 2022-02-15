@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold;
+package edu.zju.zjh.lcold;
 
 public class O027 {
     public TreeNode mirrorTree(TreeNode root) {

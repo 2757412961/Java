@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.lcold;
+package edu.zju.zjh.lcold;
 
 public class O1603 {
     public double[] intersection(int[] start1, int[] end1, int[] start2, int[] end2) {

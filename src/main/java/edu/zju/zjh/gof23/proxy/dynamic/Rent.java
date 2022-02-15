@@ -1,4 +1,4 @@
-package main.java.edu.zju.zjh.gof23.proxy.dynamic;
+package edu.zju.zjh.gof23.proxy.dynamic;
 
 /**
  * @author: zjh
