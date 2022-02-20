@@ -10,7 +10,7 @@ import java.util.List;
  * @update:
  */
 
-public class T1380 {
+public class Q1380 {
 
     public List<Integer> luckyNumbers(int[][] matrix) {
         List<Integer> res = new ArrayList<>();
@@ -55,7 +55,7 @@ public class T1380 {
     public static void main(String[] args) {
         int[][] matrix = new int[][]{new int[]{1, 10, 4, 2}, new int[]{9, 3, 8, 7}, new int[]{15, 16, 17, 12}};
 
-        new T1380().luckyNumbers(matrix).forEach(System.out::println);
+        new Q1380().luckyNumbers(matrix).forEach(System.out::println);
     }
 
 }

@@ -1,9 +1,7 @@
 package edu.zju.zjh.lc.oqpd;
 
 import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @author: zjh
@@ -12,7 +10,7 @@ import java.util.concurrent.ArrayBlockingQueue;
  * @update:
  */
 
-public class T688 {
+public class Q0688 {
 
     private int[][] dirs = new int[][]{
             new int[]{1, 2},
@@ -90,14 +88,14 @@ public class T688 {
 //        解释: 有两步(到(1,2)，(2,1))可以让骑士留在棋盘上。
 //        在每一个位置上，也有两种移动可以让骑士留在棋盘上。
 //        骑士留在棋盘上的总概率是0 .0625。
-        System.out.println(new T688().knightProbability(3, 2, 0, 0));
+        System.out.println(new Q0688().knightProbability(3, 2, 0, 0));
 
 //        示例 2：
 //        输入: n = 1, k = 0, row = 0, column = 0
 //        输出: 1.00000
-        System.out.println(new T688().knightProbability(1, 0, 0, 0));
+        System.out.println(new Q0688().knightProbability(1, 0, 0, 0));
 
-        System.out.println(new T688().knightProbability(8, 30, 6, 4));
+        System.out.println(new Q0688().knightProbability(8, 30, 6, 4));
 
     }
 
