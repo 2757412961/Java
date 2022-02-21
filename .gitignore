@@ -4,6 +4,7 @@
 
 # GIT #
 .git/*
+.gradle/*
 
 # Java #
 **/out/*
