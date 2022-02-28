@@ -10,6 +10,8 @@ package edu.zju.zjh.lc.sort;
 public class BaseSort {
 
     /**
+     * https://leetcode-cn.com/problems/sort-an-array/solution/fu-xi-ji-chu-pai-xu-suan-fa-java-by-liweiwei1419/
+     *
      * 冒泡排序（Bubble Sort）
      * 插入排序（Insertion Sort）
      * 希尔排序（Shell Sort）
