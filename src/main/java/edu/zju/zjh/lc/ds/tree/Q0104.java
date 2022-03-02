@@ -2,12 +2,12 @@ package edu.zju.zjh.lc.ds.tree;
 
 /**
  * @author: zjh
- * @date : 2022/3/1 21:05
+ * @date : 2022/3/2 16:44
  * @Email : 2757412961@qq.com
  * @update:
  */
 
-public class Q0100 {
+public class Q0104 {
 
     public class TreeNode {
         int val;
@@ -28,13 +28,10 @@ public class Q0100 {
         }
     }
 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null && q == null) return true;
-        if (p == null && q != null) return false;
-        if (p != null && q == null) return false;
-        if (p.val != q.val) return false;
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
 
-        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
 }

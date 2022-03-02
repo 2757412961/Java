@@ -26,7 +26,7 @@ public class Q0092 {
         }
     }
 
-    public ListNode reverseBetween(ListNode head, int left, int right) {
+    public ListNode reverseBetween1(ListNode head, int left, int right) {
         if (right - left <= 0) return head;
 
         int i = 0;
@@ -50,6 +50,27 @@ public class Q0092 {
             prev = now;
         }
         start.next = now;
+
+        return dummyHead.next;
+    }
+
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if (right - left <= 0) return head;
+        ListNode dummyHead = new ListNode(0, head);
+        ListNode prev = dummyHead;
+        int i = 0;
+        while (++i < left) {
+            prev = prev.next;
+        }
+        ListNode now = prev.next, after;
+
+        i--;
+        while (++i <= right) {
+            after = now.next;
+            now.next = after.next;
+            after.next = now;
+            prev.next = after;
+        }
 
         return dummyHead.next;
     }
