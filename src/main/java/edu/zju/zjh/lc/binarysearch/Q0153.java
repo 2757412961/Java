@@ -1,4 +1,4 @@
-package edu.zju.zjh.lc.bs;
+package edu.zju.zjh.lc.binarysearch;
 
 /**
  * @author: zjh

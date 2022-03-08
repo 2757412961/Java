@@ -1,16 +1,15 @@
-package edu.zju.zjh.lc.bs;
+package edu.zju.zjh.lc.binarysearch;
 
 /**
  * @author: zjh
- * @date : 2022/3/3 14:33
+ * @date : 2022/3/3 14:13
  * @Email : 2757412961@qq.com
  * @update:
  */
 
-public class Q0154 {
+public class O0011 {
 
-    public int findMin(int[] nums) {
-        int[] numbers = nums;
+    public int minArray(int[] numbers) {
         int n = numbers.length;
         int left = 0, right = n - 1, mid = 0;
 
