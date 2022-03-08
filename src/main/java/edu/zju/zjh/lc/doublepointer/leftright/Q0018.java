@@ -1,4 +1,4 @@
-package edu.zju.zjh.lc.doublepointer;
+package edu.zju.zjh.lc.doublepointer.leftright;
 
 import java.util.ArrayList;
 import java.util.Arrays;
