@@ -7,34 +7,39 @@ package edu.zju.zjh.lc.string;
  * @update:
  */
 
-public class Q005 {
+public class Q0005 {
 
-    private int step(String s, int i, int j) {
-        int step = 0;
+    private int left = 0;
+    private int right = 1;
+    private int len = 0;
+
+    private void step(String s, int i, int j) {
         while (i >= 0 && j < s.length()) {
             if (s.charAt(i) != s.charAt(j)) {
                 break;
             }
+            if (j - i > len) {
+                len = j - i;
+                left = i;
+                right = j + 1;
+            }
             i--;
             j++;
-            step++;
         }
-
-        return step;
     }
 
     public String longestPalindrome(String s) {
-        String res = "";
         for (int i = 0; i < s.length(); i++) {
             step(s, i, i);
             step(s, i, i + 1);
         }
 
-        return res;
+        return s.substring(left, right);
     }
 
     public static void main(String[] args) {
-
+        System.out.println(new Q0005().longestPalindrome("aasd"));
+        System.out.println(new Q0005().longestPalindrome("badad"));
     }
 
 }
