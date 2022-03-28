@@ -1,4 +1,4 @@
-package edu.zju.zjh.lc.cache;
+package edu.zju.zjh.lc.cache.lru;
 
 import lombok.val;
 
