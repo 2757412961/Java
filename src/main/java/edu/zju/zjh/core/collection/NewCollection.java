@@ -57,13 +57,16 @@ public class NewCollection {
          * Map
          */
         Map<Integer, Object> hashtable = new Hashtable<>();
-        Map<Integer, Object> concurrentHashMap = new ConcurrentHashMap<>();
         Map<Integer, Object> hashMap = new HashMap<>();
         Map<Integer, Object> linkedHashMap = new LinkedHashMap<>();
         Map<Integer, Object> weakHashMap = new WeakHashMap<>();
         Map<Integer, Object> treeMap = new TreeMap<>();
         Map<Integer, Object> identityHashMap = new IdentityHashMap<>();
 
+        // 如果需要满足线程安全，可以用 Collections 的synchronizedMap 方法使
+        // HashMap 具有线程安全的能力，或者使用ConcurrentHashMap。
+        Collections.synchronizedMap(hashMap);
+        Map<Integer, Object> concurrentHashMap = new ConcurrentHashMap<>();
 
     }
 
