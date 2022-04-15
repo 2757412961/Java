@@ -1,4 +1,4 @@
-package edu.zju.zjh.lc.offer;
+package edu.zju.zjh.lc.doublepointer.slidingwindow;
 
 import java.util.HashMap;
 import java.util.Map;
