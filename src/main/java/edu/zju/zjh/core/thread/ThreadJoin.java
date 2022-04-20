@@ -11,7 +11,7 @@ public class ThreadJoin implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             System.out.println("子线程执行---" + i);
         }
     }
