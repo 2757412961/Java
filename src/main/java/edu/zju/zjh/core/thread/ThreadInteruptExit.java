@@ -44,6 +44,19 @@ public class ThreadInteruptExit {
         }
     }
 
+    public static class ThreadInterrupt2 extends Thread  {
+        @Override
+        public void run() {
+            while (true) {
+                System.out.println(Thread.currentThread().getName() + "---" + Thread.currentThread().isInterrupted());
+                if (Thread.currentThread().isInterrupted()) {
+                    System.out.println(Thread.currentThread().isInterrupted());
+                    break;
+                }
+            }
+        }
+    }
+
     @SneakyThrows
     public static void main(String[] args) {
         /**
