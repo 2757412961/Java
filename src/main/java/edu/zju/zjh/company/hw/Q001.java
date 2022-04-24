@@ -1,4 +1,4 @@
-package edu.zju.zjh.company;
+package edu.zju.zjh.company.hw;
 
 import java.util.Scanner;
 
