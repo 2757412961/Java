@@ -1,4 +1,4 @@
-package edu.zju.zjh.lc.dp;
+package edu.zju.zjh.lc.dp.subsequence;
 
 /**
  * @author: zjh

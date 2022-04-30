@@ -1,8 +1,6 @@
-package edu.zju.zjh.lc.dp;
+package edu.zju.zjh.lc.dp.subsequence;
 
 import java.util.Arrays;
-import java.util.Arrays;
-import java.util.HashMap;
 
 /**
  * @author: zjh
