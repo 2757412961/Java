@@ -1,4 +1,4 @@
-package edu.zju.zjh.lc.dp.path;
+package edu.zju.zjh.lc.dp.games;
 
 /**
  * @author: zjh
