@@ -1,9 +1,7 @@
-package edu.zju.zjh.lc.ds.graph.dijkstra;
+package edu.zju.zjh.lc.ds.graph.unionfind;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.PriorityQueue;
-import java.util.Set;
 
 /**
  * @author: zjh
