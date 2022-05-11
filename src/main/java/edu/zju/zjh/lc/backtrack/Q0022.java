@@ -51,7 +51,8 @@ public class Q0022 {
         if (leftNum < rightNum) return;
         if (leftNum > n || rightNum > n) return;
         if (leftNum == n && rightNum == n) {
-            res.add(new String(path));
+            res.add(path.toString());
+            // res.add(new String(path));
         }
 
         path.append('(');
