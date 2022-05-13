@@ -1,4 +1,4 @@
-package edu.zju.zjh.core.thread.abc;
+package edu.zju.zjh.core.thread.problem.abc;
 
 /**
  * @author: zjh

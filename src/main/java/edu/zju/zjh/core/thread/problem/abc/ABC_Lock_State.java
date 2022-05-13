@@ -1,4 +1,4 @@
-package edu.zju.zjh.core.thread.abc;
+package edu.zju.zjh.core.thread.problem.abc;
 
 /**
  * @author: zjh
@@ -6,8 +6,6 @@ package edu.zju.zjh.core.thread.abc;
  * @Email : 2757412961@qq.com
  * @update:
  */
-
-import lombok.SneakyThrows;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -18,7 +16,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 描述：建立三个线程A、B、C，A线程打印10次字母A，B线程打印10次字母B,C线程打印10次字母C，
  * 但是要求三个线程同时运行，并且实现交替打印，即按照ABCABCABC的顺序打印。
  */
-public class ABC_Lock {
+public class ABC_Lock_State {
 
     private static Lock lock = new ReentrantLock(); // 通过JDK5中的Lock锁来保证线程的访问的互斥
     private static int state = 0; //通过state的值来确定是否打印

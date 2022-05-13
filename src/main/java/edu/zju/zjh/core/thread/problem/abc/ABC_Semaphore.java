@@ -1,4 +1,4 @@
-package edu.zju.zjh.core.thread.abc;
+package edu.zju.zjh.core.thread.problem.abc;
 
 /**
  * @author: zjh
@@ -8,9 +8,6 @@ package edu.zju.zjh.core.thread.abc;
  */
 
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 链接：https://www.jianshu.com/p/f79fa5aafb44
