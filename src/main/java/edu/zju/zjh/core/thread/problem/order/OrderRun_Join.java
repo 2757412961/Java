@@ -1,4 +1,4 @@
-package edu.zju.zjh.core.thread.problem.abc;
+package edu.zju.zjh.core.thread.problem.order;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
