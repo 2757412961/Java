@@ -55,7 +55,10 @@ def post_code(num=100):
 
             response = requests.post(url=url, headers=headers, data=payload)
             print(code)
-            print(threading.current_thread().name + ": " + response.text)
+            print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())) + ' '
+                  + threading.current_thread().name + ": ("
+                  + str(i) + "): "
+                  + response.text)
         except Exception as e:
             print(e)
 
@@ -65,9 +68,9 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
     # 创建一个包含n条线程的线程池
-    pool = ThreadPoolExecutor(max_workers=4)
+    pool = ThreadPoolExecutor(max_workers=16)
     # 向线程池提交一个task, 1000000会作为action()函数的参数
-    for i in range(10):
+    for i in range(32):
         future = pool.submit(post_code, 1000000)
         # 判断future代表的任务是否结束
         print(future.done())
