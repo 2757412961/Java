@@ -5,9 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author: zjh
@@ -93,6 +91,27 @@ public class SomeThing {
     }
 
     /**
+     * 测试 StringBuilder reverse()
+     */
+    @Test
+    public void testStringBuilderReverse() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("test reverse");
+        System.out.println(sb.toString());
+
+        System.out.println(sb.reverse().toString());
+        System.out.println(sb.toString());
+        StringBuilder insert = sb.insert(0, "###");
+        System.out.println(sb.toString());
+
+
+        String s = "FY2D_FDI_ALL_NOM_20140423_0430.hdf";
+        String rep = s.replace("hdf", "pdf");
+        System.out.println(s);
+        System.out.println(rep);
+    }
+
+    /**
      * 测试 Boolean
      */
     @Test
@@ -101,6 +120,60 @@ public class SomeThing {
         c++;
 
         boolean b = false;
+    }
+
+    /**
+     * 测试 String
+     */
+    @Test
+    public void testStringConstantPool() {
+        String m = "hello,world";
+        // 会分配一个11长度的char数组，并在常量池分配一个由这个char数组组成的字符串，然后由m去引用这个字符串
+        String n = "hello,world";
+        // 用n去引用常量池里边的字符串，所以和m引用的是同一个对象
+        String u = new String(m);
+        // 生成一个新的字符串，但内部的字符数组引用着m内部的字符数组
+        String v = new String("hello,world");
+        // 同样会生成一个新的字符串，但内部的字符数组引用常量池里边的字符串内部的字符数组，意思是和u是同样的字符数组
+
+        // test
+        System.out.println(m == n); // true
+        System.out.println(m == u); // false
+        System.out.println(m == v); // false
+        System.out.println(u == v); // false
+
+        System.out.println(m == u.intern()); // true
+        System.out.println(m == v.intern()); // true
+        System.out.println(n == v.intern()); // true
+        System.out.println(u.intern() == v.intern()); // true
+    }
+
+    /**
+     * 测试 SetRemove
+     */
+    @Test
+    public void testSetRemove() {
+        Set<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(1);
+        set.add(2);
+
+        boolean remove1 = set.remove(1);
+        boolean remove3 = set.remove(3);
+
+        set.stream().forEach(System.out::println);
+    }
+
+    /**
+     * 测试 Convert
+     */
+    @Test
+    public void testConvert() {
+        int a = 255;
+        byte b = 127;
+
+        System.out.println((byte) a);
+        System.out.println((byte) a == b);
     }
 
 }
