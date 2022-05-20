@@ -1,7 +1,4 @@
-package edu.zju.zjh.lc.array;
-
-import java.util.HashMap;
-import java.util.Map;
+package edu.zju.zjh.lc.game;
 
 /**
  * @author: zjh
