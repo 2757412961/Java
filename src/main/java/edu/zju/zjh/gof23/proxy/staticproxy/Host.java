@@ -1,4 +1,4 @@
-package edu.zju.zjh.gof23.proxy.init;
+package edu.zju.zjh.gof23.proxy.staticproxy;
 
 /**
  * @author: zjh
@@ -13,4 +13,5 @@ public class Host implements Rent {
     public void rent() {
         System.out.println("rent host house");
     }
+
 }

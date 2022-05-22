@@ -1,4 +1,4 @@
-package edu.zju.zjh.gof23.proxy.init;
+package edu.zju.zjh.gof23.proxy.staticproxy;
 
 /**
  * @author: zjh
