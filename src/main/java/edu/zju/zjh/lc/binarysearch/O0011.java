@@ -31,4 +31,26 @@ public class O0011 {
         return numbers[mid];
     }
 
+    /**
+     * 二刷
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:41.3 MB,击败了17.92% 的Java用户
+     */
+    public int minArrayTwo(int[] numbers) {
+        int l = 0, r = numbers.length - 1, m = 0;
+
+        while (l < r && numbers[l] >= numbers[r]) {
+            m = l + (r - l) / 2;
+            if (numbers[m] > numbers[l]) {
+                l = m + 1;
+            } else if (numbers[m] < numbers[l]) {
+                r = m;
+            } else if (numbers[m] == numbers[l]) {
+                l++;
+            }
+        }
+
+        return numbers[l];
+    }
+
 }
