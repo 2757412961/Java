@@ -1,4 +1,4 @@
-package edu.zju.zjh.core.jvm;
+package edu.zju.zjh.core.jvm.oom;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;

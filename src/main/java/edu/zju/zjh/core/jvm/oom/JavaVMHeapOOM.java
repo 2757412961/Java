@@ -1,4 +1,4 @@
-package edu.zju.zjh.core.jvm;
+package edu.zju.zjh.core.jvm.oom;
 
 import java.util.ArrayList;
 import java.util.List;

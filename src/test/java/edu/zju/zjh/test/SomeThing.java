@@ -72,6 +72,32 @@ public class SomeThing {
     }
 
     /**
+     * 测试 String
+     */
+    @Test
+    public void testStringConstantPool() {
+        String m = "hello,world";
+        // 会分配一个11长度的char数组，并在常量池分配一个由这个char数组组成的字符串，然后由m去引用这个字符串
+        String n = "hello,world";
+        // 用n去引用常量池里边的字符串，所以和m引用的是同一个对象
+        String u = new String(m);
+        // 生成一个新的字符串，但内部的字符数组引用着m内部的字符数组
+        String v = new String("hello,world");
+        // 同样会生成一个新的字符串，但内部的字符数组引用常量池里边的字符串内部的字符数组，意思是和u是同样的字符数组
+
+        // test
+        System.out.println(m == n); // true
+        System.out.println(m == u); // false
+        System.out.println(m == v); // false
+        System.out.println(u == v); // false
+
+        System.out.println(m == u.intern()); // true
+        System.out.println(m == v.intern()); // true
+        System.out.println(n == v.intern()); // true
+        System.out.println(u.intern() == v.intern()); // true
+    }
+
+    /**
      * 测试 StringBuilder
      */
     @Test
@@ -123,29 +149,15 @@ public class SomeThing {
     }
 
     /**
-     * 测试 String
+     * 测试 Integer
      */
     @Test
-    public void testStringConstantPool() {
-        String m = "hello,world";
-        // 会分配一个11长度的char数组，并在常量池分配一个由这个char数组组成的字符串，然后由m去引用这个字符串
-        String n = "hello,world";
-        // 用n去引用常量池里边的字符串，所以和m引用的是同一个对象
-        String u = new String(m);
-        // 生成一个新的字符串，但内部的字符数组引用着m内部的字符数组
-        String v = new String("hello,world");
-        // 同样会生成一个新的字符串，但内部的字符数组引用常量池里边的字符串内部的字符数组，意思是和u是同样的字符数组
+    public void testInteger() {
+        Integer max = Integer.MAX_VALUE;
 
-        // test
-        System.out.println(m == n); // true
-        System.out.println(m == u); // false
-        System.out.println(m == v); // false
-        System.out.println(u == v); // false
-
-        System.out.println(m == u.intern()); // true
-        System.out.println(m == v.intern()); // true
-        System.out.println(n == v.intern()); // true
-        System.out.println(u.intern() == v.intern()); // true
+        System.out.println(max++);
+        System.out.println(max++);
+        System.out.println(max++);
     }
 
     /**
