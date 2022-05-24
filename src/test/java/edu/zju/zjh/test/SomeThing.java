@@ -161,6 +161,17 @@ public class SomeThing {
     }
 
     /**
+     * 测试 Final
+     */
+    @Test
+    public void testFinal() {
+        final Integer finala ;
+
+        finala = 10;
+        System.out.println(finala);
+    }
+
+    /**
      * 测试 SetRemove
      */
     @Test
