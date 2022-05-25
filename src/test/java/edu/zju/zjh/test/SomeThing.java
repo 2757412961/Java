@@ -161,6 +161,14 @@ public class SomeThing {
     }
 
     /**
+     * 测试 Integer Radix
+     */
+    @Test
+    public void testIntegerRadix() {
+        System.out.println(Integer.toString(11, 2));
+    }
+
+    /**
      * 测试 Final
      */
     @Test
