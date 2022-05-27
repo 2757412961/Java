@@ -11,6 +11,8 @@ public class Father {
 
     private int father;
 
+    public int varF;
+
     public Father() {
 
     }

@@ -18,6 +18,9 @@ public class Child extends Father {
      * 那么此时系统是不会为我们自动添加无参的构造方法的，此时程序结果就会提醒你父类没有无参的构造方法，程序就会报错。
      */
 
+    public int varC;
+    public static int varS;
+
     public Child() {
         /**
          * 如果我们在父类中已经自己定义了有参的构造方法，却没有定义无参的构造方法，
@@ -27,6 +30,23 @@ public class Child extends Father {
 
     public Child(int father) {
         super(father);
+        int a = super.varF;
+    }
+
+    public static void zjuLoveLemon(int localC) {
+        varS = localC;
+    }
+
+    public void zjhLoveLemon(int localC, int localF) {
+        /**
+         * 为什么静态成员、静态方法中不能用this和super关键字
+         * 1.super的用法跟this类似，this代表对本类对象的引用，指向本类已经创建的对象；而super代表对父类对象的引用，指向父类对象；
+         * 2.静态优先于对象存在；
+         * 3.由上面的1.和2.知：因为静态优先于对象存在，所以方法被静态修饰之后方法先存在，而方法里面要用到super指向的父类对象，
+         *   但是所需的父类引用对象晚于该方法出现，也就是super所指向的对象没有，当然就会出错。
+         */
+        this.varC = localC;
+        super.varF = localF;
     }
 
 }

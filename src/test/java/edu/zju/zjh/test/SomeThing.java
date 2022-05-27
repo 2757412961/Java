@@ -173,7 +173,7 @@ public class SomeThing {
      */
     @Test
     public void testFinal() {
-        final Integer finala ;
+        final Integer finala;
 
         finala = 10;
         System.out.println(finala);
