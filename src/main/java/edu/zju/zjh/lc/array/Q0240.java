@@ -9,6 +9,13 @@ package edu.zju.zjh.lc.array;
 
 public class Q0240 {
 
+    /**
+     * 方法二：二分查找
+     */
+
+    /**
+     * 方法三：Z 字形查找
+     */
     public boolean searchMatrix(int[][] matrix, int target) {
         int i = 0;
         int j = matrix[0].length - 1;
