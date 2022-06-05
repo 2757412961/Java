@@ -72,7 +72,7 @@ public class SomeThing {
     }
 
     /**
-     * 测试 String
+     * 测试 String Pool
      */
     @Test
     public void testStringConstantPool() {
@@ -158,6 +158,19 @@ public class SomeThing {
         System.out.println(max++);
         System.out.println(max++);
         System.out.println(max++);
+    }
+
+    /**
+     * 测试 String
+     */
+    @Test
+    public void testString() {
+        String s = "01234567890";
+
+        System.out.println(s.startsWith("012"));
+        System.out.println(s.startsWith("345"));
+        System.out.println(s.startsWith("345", 2));
+        System.out.println(s.startsWith("345", 3));
     }
 
     /**
