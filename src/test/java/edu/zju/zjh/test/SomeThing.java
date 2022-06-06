@@ -16,6 +16,18 @@ import java.util.*;
 
 public class SomeThing {
 
+    @Test
+    public void testSort() {
+        String str = "";
+
+        String[] strs = str.split(" ");
+        Arrays.sort(strs, (a, b) -> Integer.valueOf(a) - Integer.valueOf(b));
+
+        for (String s : strs) {
+            System.out.print(s + " ");
+        }
+    }
+
     /**
      * 测试负数整除
      */
