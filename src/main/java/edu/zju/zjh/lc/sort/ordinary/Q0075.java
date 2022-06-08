@@ -34,4 +34,24 @@ public class Q0075 {
         }
     }
 
+    /**
+     * 二刷
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:40 MB,击败了24.75% 的Java用户
+     */
+    public void sortColors2(int[] nums) {
+        int l = 0, r = nums.length - 1, pos = 0;
+
+        while (pos <= r) {
+            if (nums[pos] == 0) {
+                swap(nums, pos, l++);
+                if (pos < l) pos = l;
+            } else if (nums[pos] == 1) {
+                pos++;
+            } else if (nums[pos] == 2) {
+                swap(nums, pos, r--);
+            }
+        }
+    }
+
 }

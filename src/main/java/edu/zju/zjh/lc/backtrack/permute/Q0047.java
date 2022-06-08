@@ -2,6 +2,7 @@ package edu.zju.zjh.lc.backtrack.permute;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -43,6 +44,39 @@ public class Q0047 {
         backTrack(nums);
 
         return res;
+    }
+
+    private class S2 {
+
+        public ArrayList<List<Integer>> backTrack(int[] nums, boolean[] vis, ArrayList<List<Integer>> res, LinkedList<Integer> path) {
+            if (path.size() == nums.length) {
+                res.add(new LinkedList<>(path));
+                return res;
+            }
+
+            for (int i = 0; i < nums.length; i++) {
+                if (i > 0 && nums[i] == nums[i - 1] && !vis[i - 1]) {
+                    continue;
+                }
+                if (!vis[i]) {
+                    vis[i] = true;
+                    path.offerLast(nums[i]);
+                    backTrack(nums, vis, res, path);
+                    path.pollLast();
+                    vis[i] = false;
+                }
+            }
+
+            return res;
+        }
+
+        public List<List<Integer>> permuteUnique(int[] nums) {
+            int n = nums.length;
+            Arrays.sort(nums);
+
+            return backTrack(nums, new boolean[n], new ArrayList<>(40320), new LinkedList<>());
+        }
+
     }
 
 }
