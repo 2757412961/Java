@@ -29,4 +29,21 @@ public class Q0470 {
         return a % 2 == 0 ? b : b + 5;
     }
 
+    private class S2 {
+
+        /**
+         * 执行耗时:6 ms,击败了44.93% 的Java用户
+         * 内存消耗:46.6 MB,击败了96.60% 的Java用户
+         */
+        public int rand10() {
+            int a, b;
+
+            while ((a = rand7()) > 6) ;
+            while ((b = rand7()) > 5) ;
+
+            return (a % 2) * 5 + b;
+        }
+
+    }
+
 }

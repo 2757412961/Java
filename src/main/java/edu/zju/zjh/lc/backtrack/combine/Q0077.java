@@ -43,4 +43,27 @@ public class Q0077 {
         return res;
     }
 
+    private class S2 {
+
+        public List<List<Integer>> combine(int n, int k, int start, List<List<Integer>> res, LinkedList<Integer> path) {
+            if (k == path.size()) {
+                res.add(new LinkedList<>(path));
+                return res;
+            }
+
+            for (int i = start; i <= n; i++) {
+                path.offerLast(i);
+                combine(n, k, i + 1, res, path);
+                path.removeLast();
+            }
+
+            return res;
+        }
+
+        public List<List<Integer>> combine(int n, int k) {
+            return combine(n, k, 1, new ArrayList<>(100), new LinkedList<>());
+        }
+
+    }
+
 }

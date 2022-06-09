@@ -1,4 +1,4 @@
-package edu.zju.zjh.lc.divideconquer;
+package edu.zju.zjh.lc.math;
 
 /**
  * @author: zjh
