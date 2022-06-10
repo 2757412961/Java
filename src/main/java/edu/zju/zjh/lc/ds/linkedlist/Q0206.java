@@ -26,27 +26,41 @@ public class Q0206 {
         }
     }
 
-    public ListNode reverseList1(ListNode head) {
-        ListNode now = null, last = null;
+    /**
+     * 迭代
+     */
+    private class S1 {
 
-        while (head != null) {
-            now = head;
-            head = head.next;
-            now.next = last;
-            last = now;
+        public ListNode reverseList(ListNode head) {
+            ListNode now = null, last = null;
+
+            while (head != null) {
+                now = head;
+                head = head.next;
+                now.next = last;
+                last = now;
+            }
+
+            return last;
         }
 
-        return last;
     }
 
-    public ListNode reverseList(ListNode head) {
-        if (head == null || head.next == null) return head;
+    /**
+     * 递归
+     */
+    private class S2 {
 
-        ListNode ret = reverseList(head.next);
-        head.next.next = head;
-        head.next = null;
+        public ListNode reverseList(ListNode head) {
+            if (head == null || head.next == null) return head;
 
-        return ret;
+            ListNode ret = reverseList(head.next);
+            head.next.next = head;
+            head.next = null;
+
+            return ret;
+        }
+
     }
 
 }

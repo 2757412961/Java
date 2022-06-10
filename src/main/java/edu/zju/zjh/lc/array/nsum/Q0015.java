@@ -8,6 +8,9 @@ import java.util.List;
 
 public class Q0015 {
 
+    /**
+     * 01
+     */
     public List<List<Integer>> threeSum01(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         if (nums.length < 3) {
@@ -44,6 +47,9 @@ public class Q0015 {
         return res;
     }
 
+    /**
+     * 02
+     */
     public List<List<Integer>> threeSum02(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         if (nums.length < 3) {
@@ -79,6 +85,9 @@ public class Q0015 {
         return res;
     }
 
+    /**
+     * 03
+     */
     public List<List<Integer>> twoSum(int[] nums, int target, int i, int j) {
         if (i >= j) return new LinkedList<>();
         List<List<Integer>> res = new LinkedList<>();

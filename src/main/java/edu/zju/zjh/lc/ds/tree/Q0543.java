@@ -31,41 +31,49 @@ public class Q0543 {
     /**
      * 1
      */
-    public int maxDepth(TreeNode root) {
-        if (root == null) return 0;
+    private class S1 {
 
-        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-    }
+        public int maxDepth(TreeNode root) {
+            if (root == null) return 0;
 
-    public int diameterOfBinaryTree(TreeNode root) {
-        if (root == null) return 0;
+            return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+        }
 
-        int diameter = maxDepth(root.left) + maxDepth(root.right);
-        int left = diameterOfBinaryTree(root.left);
-        int right = diameterOfBinaryTree(root.right);
+        public int diameterOfBinaryTree(TreeNode root) {
+            if (root == null) return 0;
 
-        return Math.max(diameter, Math.max(left, right));
+            int diameter = maxDepth(root.left) + maxDepth(root.right);
+            int left = diameterOfBinaryTree(root.left);
+            int right = diameterOfBinaryTree(root.right);
+
+            return Math.max(diameter, Math.max(left, right));
+        }
+
     }
 
     /**
      * 2
      */
-    private int maxDiameter = 0;
+    private class S2 {
 
-    public int maxDepth2(TreeNode root) {
-        if (root == null) return 0;
+        private int maxDiameter = 0;
 
-        int maxDepthLeft = maxDepth2(root.left);
-        int maxDepthRight = maxDepth2(root.right);
-        maxDiameter = Math.max(maxDiameter, maxDepthLeft + maxDepthRight);
+        public int maxDepth2(TreeNode root) {
+            if (root == null) return 0;
 
-        return Math.max(maxDepthLeft, maxDepthRight) + 1;
-    }
+            int maxDepthLeft = maxDepth2(root.left);
+            int maxDepthRight = maxDepth2(root.right);
+            maxDiameter = Math.max(maxDiameter, maxDepthLeft + maxDepthRight);
 
-    public int diameterOfBinaryTree2(TreeNode root) {
-        maxDepth2(root);
+            return Math.max(maxDepthLeft, maxDepthRight) + 1;
+        }
 
-        return maxDiameter;
+        public int diameterOfBinaryTree2(TreeNode root) {
+            maxDepth2(root);
+
+            return maxDiameter;
+        }
+
     }
 
 }

@@ -26,50 +26,89 @@ public class Q0234 {
         }
     }
 
-    ListNode left;
+    private class S1 {
+        ListNode left;
 
-    public boolean isPalindromeRecursive(ListNode head) {
-        if (head == null) return true;
+        public boolean isPalindromeRecursive(ListNode head) {
+            if (head == null) return true;
 
-        boolean res = isPalindromeRecursive(head.next);
-        res = (head.val == left.val) && res;
-        left = left.next;
+            boolean res = isPalindromeRecursive(head.next);
+            res = (head.val == left.val) && res;
+            left = left.next;
 
-        return res;
+            return res;
+        }
+
+        public boolean isPalindrome(ListNode head) {
+            left = head;
+
+            return isPalindromeRecursive(head);
+        }
     }
 
-    public boolean isPalindrome0(ListNode head) {
-        left = head;
+    private class S2 {
+        public boolean isPalindrome(ListNode head) {
+            ListNode slow = head, fast = head, prev = null, now;
+            int len = 0;
 
-        return isPalindromeRecursive(head);
+            while (fast != null && fast.next != null) {
+                now = slow;
+                slow = slow.next;
+                fast = fast.next.next;
+                now.next = prev;
+                prev = now;
+            }
+
+            if (fast == null) {
+                // odd do nothing
+            } else {
+                // even
+                slow = slow.next;
+            }
+
+            while (slow != null && prev != null) {
+                if (slow.val != prev.val) return false;
+                slow = slow.next;
+                prev = prev.next;
+            }
+
+            return true;
+        }
     }
 
-    public boolean isPalindrome(ListNode head) {
-        ListNode slow = head, fast = head, prev = null, now;
-        int len = 0;
+    public class S3 {
+        public boolean isPalindrome(ListNode head) {
+            int size = 0;
+            ListNode slow = head, fast = head, cur = head, prev = null;
 
-        while (fast != null && fast.next != null) {
-            now = slow;
-            slow = slow.next;
-            fast = fast.next.next;
-            now.next = prev;
-            prev = now;
+            while (cur != null) {
+                cur = cur.next;
+                size++;
+            }
+
+            while (fast != null && fast.next != null) {
+                cur = slow;
+                slow = slow.next;
+                fast = fast.next.next;
+
+                cur.next = prev;
+                prev = cur;
+            }
+
+            if (size % 2 == 1) {
+                slow = slow.next;
+            }
+
+            while (slow != null) {
+                if (prev.val != slow.val) {
+                    return false;
+                }
+                slow = slow.next;
+                prev = prev.next;
+            }
+
+            return true;
         }
-
-        if (fast == null) {
-            // odd do nothing
-        } else {
-            // even
-            slow = slow.next;
-        }
-
-        while (slow != null && prev != null) {
-            if (slow.val != prev.val) return false;
-            slow = slow.next;
-            prev = prev.next;
-        }
-
-        return true;
     }
 
 }
