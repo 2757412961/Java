@@ -20,7 +20,7 @@ public class SomeThing {
     public void testSort() {
         String str = "";
 
-        String[] strs = str.split(" ");
+        String[] strs = str.split("\\s+");
         Arrays.sort(strs, (a, b) -> Integer.valueOf(a) - Integer.valueOf(b));
 
         for (String s : strs) {

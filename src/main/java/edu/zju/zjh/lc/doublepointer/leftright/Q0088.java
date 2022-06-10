@@ -29,4 +29,32 @@ public class Q0088 {
         }
     }
 
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:41.7 MB,击败了5.19% 的Java用户
+     */
+    private class S2 {
+
+        public void merge(int[] nums1, int m, int[] nums2, int n) {
+            int cur = nums1.length - 1;
+
+            m--;
+            n--;
+            while (m >= 0 && n >= 0) {
+                if (nums1[m] < nums2[n]) {
+                    nums1[cur--] = nums2[n--];
+                } else {
+                    nums1[cur--] = nums1[m--];
+                }
+            }
+            while (m >= 0) {
+                nums1[cur--] = nums1[m--];
+            }
+            while (n >= 0) {
+                nums1[cur--] = nums2[n--];
+            }
+        }
+
+    }
+
 }

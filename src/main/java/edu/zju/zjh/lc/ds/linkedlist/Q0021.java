@@ -56,4 +56,41 @@ public class Q0021 {
         return head.next;
     }
 
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:40.7 MB,击败了67.01% 的Java用户
+     */
+    private class S2 {
+
+        public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+            ListNode dummy = new ListNode(), cur = dummy;
+
+            while (list1 != null && list2 != null) {
+                if (list1.val <= list2.val) {
+                    cur.next = list1;
+                    list1 = list1.next;
+                } else {
+                    cur.next = list2;
+                    list2 = list2.next;
+                }
+                cur = cur.next;
+            }
+
+            while (list1 != null) {
+                cur.next = list1;
+                list1 = list1.next;
+                cur = cur.next;
+            }
+
+            while (list2 != null) {
+                cur.next = list2;
+                list2 = list2.next;
+                cur = cur.next;
+            }
+
+            return dummy.next;
+        }
+
+    }
+
 }

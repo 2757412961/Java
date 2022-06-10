@@ -42,4 +42,37 @@ public class Q0005 {
         System.out.println(new Q0005().longestPalindrome("badad"));
     }
 
+    /**
+     * 执行耗时:10 ms,击败了92.23% 的Java用户
+     * 内存消耗:41.2 MB,击败了83.91% 的Java用户
+     */
+    private class S2 {
+
+        private int l = 0, r = 0, len = 0;
+
+        public void find(char[] cs, int i, int j) {
+            while (0 <= i && j < cs.length && cs[i] == cs[j]) {
+                if (j - i + 1 > len) {
+                    l = i;
+                    r = j + 1;
+                    len = r - l;
+                }
+
+                i--;
+                j++;
+            }
+        }
+
+        public String longestPalindrome(String s) {
+            final char[] cs = s.toCharArray();
+            for (int i = 0; i < s.length(); i++) {
+                find(cs, i, i);
+                find(cs, i, i + 1);
+            }
+
+            return s.substring(l, r);
+        }
+
+    }
+
 }
