@@ -20,4 +20,22 @@ public class Q0191 {
         return res;
     }
 
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:38.8 MB,击败了7.57% 的Java用户
+     */
+    public class S2 {
+
+        public int hammingWeight(int n) {
+            int res = 0;
+            while (n != 0) {
+                n = n & (n - 1);
+                res++;
+            }
+
+            return res;
+        }
+
+    }
+
 }

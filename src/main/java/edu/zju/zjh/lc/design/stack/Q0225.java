@@ -45,4 +45,48 @@ public class Q0225 {
         }
     }
 
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:39.1 MB,击败了55.77% 的Java用户
+     */
+    class S2 {
+
+        class MyStack {
+
+            Queue<Integer> q = new LinkedList<>();
+
+            public MyStack() {
+
+            }
+
+            public void push(int x) {
+                q.offer(x);
+            }
+
+            public int pop() {
+                int size = q.size();
+                for (int i = 1; i < size; i++) {
+                    q.offer(q.poll());
+                }
+
+                return q.poll();
+            }
+
+            public int top() {
+                int size = q.size();
+                for (int i = 1; i < size; i++) {
+                    q.offer(q.poll());
+                }
+                int top = q.peek();
+                q.offer(q.poll());
+                return top;
+            }
+
+            public boolean empty() {
+                return q.isEmpty();
+            }
+        }
+
+    }
+
 }
