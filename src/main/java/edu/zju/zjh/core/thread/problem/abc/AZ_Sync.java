@@ -26,7 +26,7 @@ public class AZ_Sync {
 
         @Override
         public void run() {
-            while (count < 3) {
+            while (count < 26) {
                 if (count % 3 == id) {
                     synchronized (MyThread.class) {
                         count++;
