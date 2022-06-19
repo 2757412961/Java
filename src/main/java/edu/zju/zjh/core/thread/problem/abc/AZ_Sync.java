@@ -16,7 +16,8 @@ import javax.annotation.security.RunAs;
 public class AZ_Sync {
 
     private static char c = 'A';
-    private static volatile int count = 0;
+    private static int count = 0;
+    public static final int sum = 26;
 
     @NoArgsConstructor
     @AllArgsConstructor
@@ -26,11 +27,11 @@ public class AZ_Sync {
 
         @Override
         public void run() {
-            while (count < 26) {
-                if (count % 3 == id) {
-                    synchronized (MyThread.class) {
+            while (count < sum) {
+                synchronized (MyThread.class) {
+                    if (count < sum && count % 3 == id) {
                         count++;
-                        System.out.println("thread:" + count + c);
+                        System.out.println("thread " + id + ":" + count + c);
                         c++;
                     }
                 }
