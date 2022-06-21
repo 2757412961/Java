@@ -33,22 +33,50 @@ public class Q0129 {
      * 执行耗时:0 ms,击败了100.00% 的Java用户
      * 内存消耗:39 MB,击败了48.02% 的Java用户
      */
-    public int sumNumbersPath(TreeNode root, int prevSum) {
-        if (root == null) return 0;
+    private class S1 {
 
-        int sum = prevSum * 10 + root.val;
-        if (root.left == null && root.right == null) {
-            return sum;
+        public int sumNumbersPath(TreeNode root, int prevSum) {
+            if (root == null) return 0;
+
+            int sum = prevSum * 10 + root.val;
+            if (root.left == null && root.right == null) {
+                return sum;
+            }
+
+            int left = sumNumbersPath(root.left, sum);
+            int right = sumNumbersPath(root.right, sum);
+
+            return left + right;
         }
 
-        int left = sumNumbersPath(root.left, sum);
-        int right = sumNumbersPath(root.right, sum);
+        public int sumNumbers(TreeNode root) {
+            return sumNumbersPath(root, 0);
+        }
 
-        return left + right;
     }
 
-    public int sumNumbers(TreeNode root) {
-        return sumNumbersPath(root, 0);
+    /**
+     * 二刷
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:39 MB,击败了49.00% 的Java用户
+     */
+    private class S2 {
+
+        public int sumNumbers(TreeNode root, int prevSum) {
+            if (root == null) return 0;
+
+            int sum = prevSum * 10 + root.val;
+            if (root.left == null && root.right == null) {
+                return sum;
+            }
+
+            return sumNumbers(root.left, sum) + sumNumbers(root.right, sum);
+        }
+
+        public int sumNumbers(TreeNode root) {
+            return sumNumbers(root, 0);
+        }
+
     }
 
 }
