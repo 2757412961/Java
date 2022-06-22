@@ -18,7 +18,7 @@ public class SomeThing {
 
     @Test
     public void testSort() {
-        String str = "105 110 129 144 151 155 239 912 1143 1226";
+        String str = "36 84 91 133 301 419 448 460 560 918 1226 1249";
 
         String[] strs = str.split("\\s+");
         Arrays.sort(strs, (a, b) -> Integer.valueOf(a) - Integer.valueOf(b));
