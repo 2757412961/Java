@@ -21,18 +21,25 @@ public class O0006 {
         }
     }
 
-    private List<Integer> res = new LinkedList<>();
+    /**
+     * 栈（队列保存元素）
+     */
+    private class S1 {
 
-    private void reverse2List(ListNode head) {
-        if (head == null) return ;
+        private List<Integer> res = new LinkedList<>();
 
-        reverse2List(head);
-        res.add(head.val);
-    }
+        private void reverse2List(ListNode head) {
+            if (head == null) return;
 
-    public int[] reversePrint(ListNode head) {
-        reverse2List(head);
-        return res.stream().mapToInt(Integer::intValue).toArray();
+            reverse2List(head);
+            res.add(head.val);
+        }
+
+        public int[] reversePrint(ListNode head) {
+            reverse2List(head);
+            return res.stream().mapToInt(Integer::intValue).toArray();
+        }
+
     }
 
 }

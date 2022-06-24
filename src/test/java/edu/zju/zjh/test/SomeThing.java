@@ -84,6 +84,46 @@ public class SomeThing {
     }
 
     /**
+     * 测试 String split()
+     * https://blog.csdn.net/qq_42575499/article/details/104818614
+     */
+    @Test
+    public void testStringSplit() {
+        String s1 = "a,b,c";
+        String s2 = "a,b,c,,,";
+        String s3 = "a,b,c,,,d";
+        String[] _s1 = s1.split(",");
+        String[] _s2 = s2.split(",");
+        String[] _s3 = s3.split(",");
+        String[] _s4 = s2.split(",", -1);
+        String[] _s5 = s2.split(",", 2);
+        System.out.println("s1调用split方法后的结果为：");
+        for (String s : _s1) {
+            System.out.print("\"" + s + "\"" + "\t");
+        }
+        System.out.println();
+        System.out.println("s2调用split方法后的结果为：");
+        for (String s : _s2) {
+            System.out.print("\"" + s + "\"" + "\t");
+        }
+        System.out.println();
+        System.out.println("s3调用split方法后的结果为：");
+        for (String s : _s3) {
+            System.out.print("\"" + s + "\"" + "\t");
+        }
+        System.out.println();
+        System.out.println("s4调用split方法后的结果为：");
+        for (String s : _s4) {
+            System.out.print("\"" + s + "\"" + "\t");
+        }
+        System.out.println();
+        System.out.println("s5调用split方法后的结果为：");
+        for (String s : _s5) {
+            System.out.print("\"" + s + "\"" + "\t");
+        }
+    }
+
+    /**
      * 测试 String Pool
      */
     @Test

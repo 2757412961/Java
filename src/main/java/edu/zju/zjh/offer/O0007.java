@@ -34,53 +34,65 @@ public class O0007 {
     /**
      * 第一次：递归 + 循环
      */
-    public TreeNode buildTree(int[] preorder, int leftp, int rightp,
-                              int[] inorder, int lefti, int righti) {
-        if (lefti > righti) return null;
-        int treeVal = preorder[leftp];
+    private class S1 {
 
-        int split = lefti;
-        for (; split <= righti; split++) {
-            if (treeVal == inorder[split]) {
-                break;
+        public TreeNode buildTree(int[] preorder, int leftp, int rightp,
+                                  int[] inorder, int lefti, int righti) {
+            if (lefti > righti) return null;
+            int treeVal = preorder[leftp];
+
+            int split = lefti;
+            for (; split <= righti; split++) {
+                if (treeVal == inorder[split]) {
+                    break;
+                }
             }
+
+            int lenLeft = split - lefti;
+            int lenRight = righti - split;
+            TreeNode root = new TreeNode(treeVal);
+            root.left = buildTree(preorder, leftp + 1, leftp + lenLeft, inorder, lefti, split - 1);
+            root.right = buildTree(preorder, leftp + lenLeft + 1, rightp, inorder, split + 1, righti);
+
+            return root;
         }
 
-        int lenLeft = split - lefti;
-        int lenRight = righti - split;
-        TreeNode root = new TreeNode(treeVal);
-        root.left = buildTree(preorder, leftp + 1, leftp + lenLeft, inorder, lefti, split - 1);
-        root.right = buildTree(preorder, leftp + lenLeft + 1, rightp, inorder, split + 1, righti);
+        public TreeNode buildTree(int[] preorder, int[] inorder) {
+            return buildTree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
+        }
 
-        return root;
     }
 
     /**
      * 优化：递归 + 哈希表
      */
-    private Map<Integer, Integer> map = new HashMap<>();
+    private class S2 {
 
-    public TreeNode build(int[] preorder, int leftp, int rightp,
-                          int[] inorder, int lefti, int righti) {
-        if (lefti > righti) return null;
-        int rootVal = preorder[leftp];
+        private Map<Integer, Integer> map = new HashMap<>();
 
-        int split = map.get(rootVal);
+        public TreeNode build(int[] preorder, int leftp, int rightp,
+                              int[] inorder, int lefti, int righti) {
+            if (lefti > righti) return null;
+            int rootVal = preorder[leftp];
 
-        int lenLeft = split - lefti;
-        TreeNode root = new TreeNode(rootVal);
-        root.left = build(preorder, leftp + 1, leftp + lenLeft, inorder, lefti, split - 1);
-        root.right = build(preorder, leftp + lenLeft + 1, rightp, inorder, split + 1, righti);
+            int split = map.get(rootVal);
 
-        return root;
-    }
+            int lenLeft = split - lefti;
+            TreeNode root = new TreeNode(rootVal);
+            root.left = build(preorder, leftp + 1, leftp + lenLeft, inorder, lefti, split - 1);
+            root.right = build(preorder, leftp + lenLeft + 1, rightp, inorder, split + 1, righti);
 
-    public TreeNode buildTree(int[] preorder, int[] inorder) {
-        for (int i = 0; i < inorder.length; i++) {
-            map.put(inorder[i], i);
+            return root;
         }
 
-        return build(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
+        public TreeNode buildTree(int[] preorder, int[] inorder) {
+            for (int i = 0; i < inorder.length; i++) {
+                map.put(inorder[i], i);
+            }
+
+            return build(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
+        }
+
     }
 
 }
