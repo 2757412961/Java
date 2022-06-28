@@ -14,27 +14,72 @@ import java.util.List;
 
 public class Q0090 {
 
-    private List<List<Integer>> res = new ArrayList<>();
-    private LinkedList<Integer> path = new LinkedList<>();
+    /**
+     * 回溯
+     */
+    private class S1 {
 
-    private void backTrack(int[] nums, int start) {
-        res.add(new LinkedList<>(path));
+        private List<List<Integer>> res = new ArrayList<>();
+        private LinkedList<Integer> path = new LinkedList<>();
 
-        for (int i = start; i < nums.length; i++) {
-            if (i > start && nums[i] == nums[i - 1]) {
-                continue;
+        private void backTrack(int[] nums, int start) {
+            res.add(new LinkedList<>(path));
+
+            for (int i = start; i < nums.length; i++) {
+                if (i > start && nums[i] == nums[i - 1]) {
+                    continue;
+                }
+                path.addLast(nums[i]);
+                backTrack(nums, i + 1);
+                path.removeLast();
             }
-            path.addLast(nums[i]);
-            backTrack(nums, i + 1);
-            path.removeLast();
         }
+
+        public List<List<Integer>> subsetsWithDup(int[] nums) {
+            Arrays.sort(nums);
+            backTrack(nums, 0);
+
+            return res;
+        }
+
     }
 
-    public List<List<Integer>> subsetsWithDup(int[] nums) {
-        Arrays.sort(nums);
-        backTrack(nums, 0);
+    /**
+     * 二刷
+     * 执行耗时:1 ms,击败了99.65% 的Java用户
+     * 内存消耗:41.4 MB,击败了80.06% 的Java用户
+     */
+    private class S2 {
 
-        return res;
+        private ArrayList<Integer> path;
+        private List<List<Integer>> res;
+
+        public void backTrack(int[] nums, int start) {
+            res.add(new ArrayList<>(path));
+
+            for (int i = start; i < nums.length; i++) {
+                // 去重
+                if (i > start && nums[i] == nums[i - 1]) {
+                    continue;
+                }
+
+                path.add(nums[i]);
+                backTrack(nums, i + 1);
+                path.remove(path.size() - 1);
+            }
+        }
+
+        public List<List<Integer>> subsetsWithDup(int[] nums) {
+            int n = nums.length;
+            path = new ArrayList<>(n);
+            res = new ArrayList<>();
+
+            Arrays.sort(nums);
+            backTrack(nums, 0);
+
+            return res;
+        }
+
     }
 
 }
