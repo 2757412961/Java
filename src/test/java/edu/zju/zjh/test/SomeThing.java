@@ -18,7 +18,7 @@ public class SomeThing {
 
     @Test
     public void testSort() {
-        // Offer 20
+        // Offer 41
         String str = "1226";
 
         String[] strs = str.split("\\s+");
@@ -231,6 +231,29 @@ public class SomeThing {
 
         System.out.println((byte) a);
         System.out.println((byte) a == b);
+    }
+
+    @Test
+    public void testStack() {
+        LinkedList<Integer> stack = new LinkedList<>();
+
+        stack.push(1);
+        System.out.println(stack.toString());
+
+        stack.push(2);
+        System.out.println(stack.toString());
+
+        stack.push(3);
+        System.out.println(stack.toString());
+
+        System.out.println(stack.pop());
+        System.out.println(stack.toString());
+
+        System.out.println(stack.peek());
+        System.out.println(stack.toString());
+
+        System.out.println(stack.poll());
+        System.out.println(stack.toString());
     }
 
 }

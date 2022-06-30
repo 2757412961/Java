@@ -28,20 +28,48 @@ public class O0027 {
         }
     }
 
-    public void swapTree(TreeNode root) {
-        TreeNode temp = root.left;
-        root.left = root.right;
-        root.right = temp;
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:38.7 MB,击败了66.14% 的Java用户
+     */
+    private class S1 {
+
+        public void swapTree(TreeNode root) {
+            TreeNode temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+        }
+
+        public TreeNode mirrorTree(TreeNode root) {
+            if (root == null) return root;
+
+            swapTree(root);
+            mirrorTree(root.left);
+            mirrorTree(root.right);
+
+            return root;
+        }
+
     }
 
-    public TreeNode mirrorTree(TreeNode root) {
-        if (root == null) return root;
+    /**
+     * 二刷
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:39.1 MB,击败了15.32% 的Java用户
+     */
+    private class S2 {
 
-        swapTree(root);
-        mirrorTree(root.left);
-        mirrorTree(root.right);
+        public TreeNode mirrorTree(TreeNode root) {
+            if (root == null) return null;
 
-        return root;
+            TreeNode left = root.left;
+            TreeNode right = root.right;
+            root.left = mirrorTree(right);
+            root.right = mirrorTree(left);
+
+            return root;
+        }
+
     }
 
 }

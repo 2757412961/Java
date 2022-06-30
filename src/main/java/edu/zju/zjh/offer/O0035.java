@@ -17,37 +17,69 @@ public class O0035 {
         }
     }
 
-    public Node copyRandomList(Node head) {
-        Node dummyHead = new Node(0), p, q, node;
-        Map<Node, Node> map = new HashMap<>();
-        map.put(null, null);
+    /**
+     * 方法二：迭代 + 节点拆分
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:41 MB,击败了45.00% 的Java用户
+     */
+    private class S1 {
 
-        q = head;
-        p = dummyHead;
-        while (q != null) {
-            if (map.containsKey(q)) {
-                node = map.get(q);
-            } else {
-                node = new Node(q.val);
-                map.put(q, node);
+        public Node copyRandomList(Node head) {
+            Node dummyHead = new Node(0), p, q, node;
+            Map<Node, Node> map = new HashMap<>();
+            map.put(null, null);
+
+            q = head;
+            p = dummyHead;
+            while (q != null) {
+                if (map.containsKey(q)) {
+                    node = map.get(q);
+                } else {
+                    node = new Node(q.val);
+                    map.put(q, node);
+                }
+                p.next = node;
+
+                q = q.next;
+                p = p.next;
             }
-            p.next = node;
 
-            q = q.next;
-            p = p.next;
+            q = head;
+            p = dummyHead.next;
+            while (q != null) {
+                node = map.get(q.random);
+                p.random = node;
+
+                q = q.next;
+                p = p.next;
+            }
+
+            return dummyHead.next;
         }
 
-        q = head;
-        p = dummyHead.next;
-        while (q != null) {
-            node = map.get(q.random);
-            p.random = node;
+    }
 
-            q = q.next;
-            p = p.next;
+    /**
+     * 方法一：回溯 + 哈希表
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:41.2 MB,击败了15.31% 的Java用户
+     */
+    private class S2 {
+
+        private Map<Node, Node> map = new HashMap<>();
+
+        public Node copyRandomList(Node head) {
+            if (head == null) return null;
+            if (map.containsKey(head)) return map.get(head);
+
+            Node node = new Node(head.val);
+            map.put(head, node);
+            node.next = copyRandomList(head.next);
+            node.random = copyRandomList(head.random);
+
+            return node;
         }
 
-        return dummyHead.next;
     }
 
 }
