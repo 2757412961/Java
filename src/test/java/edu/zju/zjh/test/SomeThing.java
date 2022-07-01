@@ -17,6 +17,11 @@ import java.util.*;
 public class SomeThing {
 
     @Test
+    public void test() {
+
+    }
+
+    @Test
     public void testSort() {
         // Offer 41
         String str = "1226";
@@ -255,5 +260,22 @@ public class SomeThing {
         System.out.println(stack.poll());
         System.out.println(stack.toString());
     }
+
+    @Test
+    public void testLamndaFor() {
+        List<String> strings = Arrays.asList("1", "2", "3");
+        //传统foreach
+        for (String s : strings) {
+            System.out.println(s);
+        }
+        //Lambda foreach
+        strings.forEach((s) -> System.out.println(s));
+        //or
+        strings.forEach(System.out::println);
+        //map
+        Map<Integer, String> map = new HashMap<>();
+        map.forEach((k, v) -> System.out.println(v));
+    }
+
 
 }

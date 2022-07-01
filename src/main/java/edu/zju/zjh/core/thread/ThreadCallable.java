@@ -1,4 +1,4 @@
-package edu.zju.zjh.core.thread.impl;
+package edu.zju.zjh.core.thread;
 
 import java.util.concurrent.*;
 
