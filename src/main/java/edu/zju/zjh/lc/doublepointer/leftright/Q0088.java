@@ -11,25 +11,33 @@ import java.util.Arrays;
 
 public class Q0088 {
 
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int cur1 = m - 1, cur2 = n - 1, idx = m + n - 1;
+    /**
+     * 双指针
+     */
+    private class S1 {
 
-        while (cur1 >= 0 && cur2 >= 0) {
-            if (nums1[cur1] > nums2[cur2]) {
+        public void merge(int[] nums1, int m, int[] nums2, int n) {
+            int cur1 = m - 1, cur2 = n - 1, idx = m + n - 1;
+
+            while (cur1 >= 0 && cur2 >= 0) {
+                if (nums1[cur1] > nums2[cur2]) {
+                    nums1[idx--] = nums1[cur1--];
+                } else {
+                    nums1[idx--] = nums2[cur2--];
+                }
+            }
+            while (cur1 >= 0) {
                 nums1[idx--] = nums1[cur1--];
-            } else {
+            }
+            while (cur2 >= 0) {
                 nums1[idx--] = nums2[cur2--];
             }
         }
-        while (cur1 >= 0) {
-            nums1[idx--] = nums1[cur1--];
-        }
-        while (cur2 >= 0) {
-            nums1[idx--] = nums2[cur2--];
-        }
+
     }
 
     /**
+     * 二刷
      * 执行耗时:0 ms,击败了100.00% 的Java用户
      * 内存消耗:41.7 MB,击败了5.19% 的Java用户
      */
