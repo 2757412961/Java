@@ -26,53 +26,67 @@ public class Q0092 {
         }
     }
 
-    public ListNode reverseBetween1(ListNode head, int left, int right) {
-        if (right - left <= 0) return head;
+    /**
+     *
+     */
+    private class S1 {
 
-        int i = 0;
-        ListNode dummyHead = new ListNode(0, head), start = dummyHead, end;
-        while (++i < left) {
-            start = start.next;
-        }
-        end = start.next;
-        while (++i <= right) {
+        public ListNode reverseBetween(ListNode head, int left, int right) {
+            if (right - left <= 0) return head;
+
+            int i = 0;
+            ListNode dummyHead = new ListNode(0, head), start = dummyHead, end;
+            while (++i < left) {
+                start = start.next;
+            }
+            end = start.next;
+            while (++i <= right) {
+                end = end.next;
+            }
             end = end.next;
-        }
-        end = end.next;
 
-        ListNode newStart = start.next;
-        ListNode prev = end, now = start.next;
-        ListNode p = start.next;
-        while (p != end) {
-            now = p;
-            p = p.next;
-            now.next = prev;
-            prev = now;
-        }
-        start.next = now;
+            ListNode newStart = start.next;
+            ListNode prev = end, now = start.next;
+            ListNode p = start.next;
+            while (p != end) {
+                now = p;
+                p = p.next;
+                now.next = prev;
+                prev = now;
+            }
+            start.next = now;
 
-        return dummyHead.next;
+            return dummyHead.next;
+        }
+
     }
 
-    public ListNode reverseBetween(ListNode head, int left, int right) {
-        if (right - left <= 0) return head;
-        ListNode dummyHead = new ListNode(0, head);
-        ListNode prev = dummyHead;
-        int i = 0;
-        while (++i < left) {
-            prev = prev.next;
-        }
-        ListNode now = prev.next, after;
+    /**
+     *
+     */
+    private class S2 {
 
-        i--;
-        while (++i <= right) {
-            after = now.next;
-            now.next = after.next;
-            after.next = now;
-            prev.next = after;
+        public ListNode reverseBetween(ListNode head, int left, int right) {
+            if (right - left <= 0) return head;
+            ListNode dummyHead = new ListNode(0, head);
+            ListNode prev = dummyHead;
+            int i = 0;
+            while (++i < left) {
+                prev = prev.next;
+            }
+            ListNode now = prev.next, after;
+
+            i--;
+            while (++i <= right) {
+                after = now.next;
+                now.next = after.next;
+                after.next = now;
+                prev.next = after;
+            }
+
+            return dummyHead.next;
         }
 
-        return dummyHead.next;
     }
 
 }

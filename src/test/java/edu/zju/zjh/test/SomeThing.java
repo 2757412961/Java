@@ -23,8 +23,8 @@ public class SomeThing {
 
     @Test
     public void testSort() {
-        // Offer 41
-        String str = "1226";
+        // Offer 60
+        String str = "201 202 217 264 309 322 343 350 384 413 441 583 633 714 931 1014 1143 1337 1346 1351 1539 1567 1608 1855";
 
         String[] strs = str.split("\\s+");
         Arrays.sort(strs, (a, b) -> Integer.valueOf(a) - Integer.valueOf(b));
