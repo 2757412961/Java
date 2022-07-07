@@ -29,6 +29,13 @@
             <version>${spring.boot.version}</version>
         </dependency>
 
+        <!-- AOP Cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
         <!-- Utils -->
         <dependency>
             <groupId>org.projectlombok</groupId>
