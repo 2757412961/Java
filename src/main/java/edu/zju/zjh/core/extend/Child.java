@@ -20,6 +20,8 @@ public class Child extends Father {
 
     public int varC;
     public static int varS;
+    // 其他类访问不了
+    private static int pS;
 
     public Child() {
         /**
