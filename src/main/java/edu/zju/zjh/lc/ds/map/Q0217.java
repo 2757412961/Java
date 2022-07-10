@@ -12,16 +12,27 @@ import java.util.Map;
 
 public class Q0217 {
 
-    public boolean containsDuplicate(int[] nums) {
-        Object CONOBJECT = new Object();
-        Map<Integer, Object> map = new HashMap<>();
+    /**
+     * 方法一：排序
+     */
 
-        for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(nums[i])) return true;
-            map.put(nums[i], CONOBJECT);
+    /**
+     * 方法二：哈希表
+     */
+    private class S1 {
+
+        public boolean containsDuplicate(int[] nums) {
+            Object CONOBJECT = new Object();
+            Map<Integer, Object> map = new HashMap<>();
+
+            for (int i = 0; i < nums.length; i++) {
+                if (map.containsKey(nums[i])) return true;
+                map.put(nums[i], CONOBJECT);
+            }
+
+            return false;
         }
 
-        return false;
     }
 
 }
