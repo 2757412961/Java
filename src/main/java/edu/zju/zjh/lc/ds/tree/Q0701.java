@@ -32,17 +32,37 @@ public class Q0701 {
      * 执行耗时:0 ms,击败了100.00% 的Java用户
      * 内存消耗:42.1 MB,击败了44.01% 的Java用户
      */
-    public TreeNode insertIntoBST(TreeNode root, int val) {
-        if (root == null) return new TreeNode(val);
+    private class S1 {
 
-        if (root.val == val) {
-        } else if (root.val < val) {
-            root.right = insertIntoBST(root.right, val);
-        } else if (root.val > val) {
-            root.left = insertIntoBST(root.left, val);
+        public TreeNode insertIntoBST(TreeNode root, int val) {
+            if (root == null) return new TreeNode(val);
+
+            if (root.val == val) {
+            } else if (root.val < val) {
+                root.right = insertIntoBST(root.right, val);
+            } else if (root.val > val) {
+                root.left = insertIntoBST(root.left, val);
+            }
+
+            return root;
         }
 
-        return root;
+    }
+
+    /**
+     * 二刷：
+     */
+    private class S2 {
+
+        public TreeNode insertIntoBST(TreeNode root, int val) {
+            if (root == null) return new TreeNode(val);
+
+            root.left = insertIntoBST(root.left, val);
+            root.right = insertIntoBST(root.right, val);
+
+            return root;
+        }
+
     }
 
 }
