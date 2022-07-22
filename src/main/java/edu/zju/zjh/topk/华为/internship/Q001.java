@@ -1,4 +1,4 @@
-package edu.zju.zjh.topk.huawei.internship;
+package edu.zju.zjh.topk.华为.internship;
 
 import java.util.Scanner;
 
