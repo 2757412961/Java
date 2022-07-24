@@ -24,7 +24,7 @@ public class SomeThing {
     @Test
     public void testSort() {
         // Offer II Done
-        String str = "5 15 18 200 322 409 416 456 483 496 509 589 733 735 976 1232 1281 1502 1588 1672 1779 1790 1822";
+        String str = "5 15 18 200 322 409 416 456 483 496 509 589 735 1232 1281 1502 1588 1672 1779 1790 1822";
 
         String[] strs = str.split("\\s+");
         Arrays.sort(strs, (a, b) -> Integer.valueOf(a) - Integer.valueOf(b));
@@ -35,14 +35,49 @@ public class SomeThing {
     }
 
     /**
-     * 测试负数整除
+     * Java中有关负数整除的计算
+     * 除法的取整分为三类：向上取整、向下取整、向零取整。
+     * <p>
+     * 1.向上取整：向+∞方向取最接近精确值的整数。在这种取整方式下，5 / 3 = 2， -5 / -3 = 2， -5 / 3 = -1， 5 / -3 = -1
+     * 2.向下取整：向-∞方向取最接近精确值的整数。在这种取整方式下，5 / 3 = 1， -5 / -3 = 1， -5 / 3 = -2， 5 / -3 = -2
+     * 3.向零取整：向0方向取最接近精确值的整数，换言之就是舍去小数部分，因此又称截断取整。在这种取整方式下，5 / 3 = 1， -5 / -3 = 1， -5 / 3 = -1， 5 / -3 = -1
+     * <p>
+     * 通过观察可以发现，无论是向上取整还是向下取整，(-a)/b==-(a/b)都不一定成立。这给程序设计者带来了极大的麻烦。
+     * 而对于向零取整，(-a)/b==-(a/b)是成立的，以此，C/C++（包括Java）采用这种取整方式。
      */
     @Test
     public void testDivide() {
         System.out.println(4 / (-3));
-        System.out.println(Math.floorMod(4, -3));
         System.out.println(5 / (-3));
-        System.out.println(Math.floorMod(5, -3));
+        System.out.println(Math.floorDiv(4, -3));
+        System.out.println(Math.floorDiv(5, -3));
+    }
+
+    /**
+     * Java中有关负数取余的计算
+     * 取余的计算，首先可以先不管被除数和除数的正负关系，全部都按照整数来计算，最后定符号。
+     * 根据上面的打印结果可以看出结果的正负号规律为：取模的正负号与被除数同号
+     */
+    @Test
+    public void testMod() {
+        /**
+         * 2 % 3 = 2
+         * 2 % -3 = 2
+         * -2 % 3 = -2
+         * -2 % -3 = -2
+         * 3 % 2 = 1
+         * 3 % -2 = 1
+         * -3 % 2 = -1
+         * -3 % -2 = -1
+         */
+        System.out.println("2 % 3 = " + 2 % 3);
+        System.out.println("2 % -3 = " + 2 % -3);
+        System.out.println("-2 % 3 = " + -2 % 3);
+        System.out.println("-2 % -3 = " + -2 % -3);
+        System.out.println("3 % 2 = " + 3 % 2);
+        System.out.println("3 % -2 = " + 3 % -2);
+        System.out.println("-3 % 2 = " + -3 % 2);
+        System.out.println("-3 % -2 = " + -3 % -2);
     }
 
     /**
