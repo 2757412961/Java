@@ -15,6 +15,7 @@ import java.util.Map;
 public class Q002 {
 
     public class Solution {
+
         /**
          * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
          * <p>
@@ -73,6 +74,7 @@ public class Q002 {
 
             return res.toArray(new int[0][0]);
         }
+
     }
 
 }
