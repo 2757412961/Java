@@ -1,4 +1,4 @@
-package edu.zju.lemon.company.wangyi;
+package edu.zju.lemon.company.网易;
 
 import java.util.Scanner;
 

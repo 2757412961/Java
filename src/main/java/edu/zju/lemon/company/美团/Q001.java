@@ -1,4 +1,4 @@
-package edu.zju.lemon.company.meituan;
+package edu.zju.lemon.company.美团;
 
 import java.util.Scanner;
 

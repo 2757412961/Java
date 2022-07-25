@@ -1,6 +1,5 @@
-package edu.zju.skr.company.ali;
+package edu.zju.skr.company.阿里;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
