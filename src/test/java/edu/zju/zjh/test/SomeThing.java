@@ -24,7 +24,7 @@ public class SomeThing {
     @Test
     public void testSort() {
         // Offer II Done
-        String str = "5 15 18 200 322 409 416 456 483 496 509 589 735 1232 1281 1502 1588 1672 1779 1790 1822";
+        String str = "5 15 18 28 200 322 389 409 416 424 456 483 496 509 589 709 720 735 953 1232 1281 1309 1502 1572 1588 1672 1678 1768 1779 1790 1822";
 
         String[] strs = str.split("\\s+");
         Arrays.sort(strs, (a, b) -> Integer.valueOf(a) - Integer.valueOf(b));
